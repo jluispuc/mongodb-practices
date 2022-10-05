@@ -9,7 +9,40 @@
 
 ![Figure 1](https://raw.githubusercontent.com/jluispuc/mongodb-practices/main/basic-crud-operations/figure1.png)
 
-# Files
+# 2.- Update patient data of 1 patient with new age, name and history entry
+
+**With the next command:**
+
+~~~
+db.patients.updateOne(
+	{ _id: ObjectId("633d6eddec3f4e626baec02e") }, 
+	{ 
+		$set: { age: 21, name: 'Louis John' }, 
+		$push: { 
+					history: { 
+						disease: 'Infectious bursitins',
+						treatment: 'Vaccination' 
+					} 
+		} 
+	}
+)
+~~~
+**Data updated:**
+~~~json
+[
+  {
+    _id: ObjectId("633d6eddec3f4e626baec02e"),
+    firstName: 'John',
+    lastName: 'Sarmiento',
+    age: 21,
+    history: [
+      { disease: 'Chronic Repiratory', treatment: 'Antibiotics' },
+      { disease: 'Infectious bursitins', treatment: 'Vaccination' }
+    ],
+    name: 'Louis John'
+  }
+]
+~~~
 
 StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
 
