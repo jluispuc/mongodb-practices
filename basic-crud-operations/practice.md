@@ -44,6 +44,8 @@ db.patients.updateOne(
 ]
 ~~~
 
+> **Note:** Use **the $push operator** to update the history entry, check the docs [here](https://www.mongodb.com/docs/manual/reference/operator/update/push/).
+
 StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
 
 ## Create files and folders
